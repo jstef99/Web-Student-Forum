@@ -113,8 +113,6 @@ public class AuthenticatedController {
         }
         email.setUsed(true);
         AllowedEmail previousAllowedEmail = emailService.findByName(previousEmail);
-        System.out.println(previousEmail);
-        System.out.println(previousAllowedEmail);
         previousAllowedEmail.setUsed(false);
         emailService.UpdateEmail(email);
         emailService.UpdateEmail(previousAllowedEmail);
