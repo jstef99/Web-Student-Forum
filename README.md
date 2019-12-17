@@ -8,7 +8,7 @@ its sweet & easy.
 
 **Note**: there is a Swagger API documentation available, feel free to clone this repo, run an app, analyze it and modify.
 
-*What has been used creating this Web App: * 
+*What has been used creating this Web App:*   
 -Spring Boot   
 -Spring MVC   
 -Spring Security   
