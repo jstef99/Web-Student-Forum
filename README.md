@@ -1,5 +1,5 @@
 # Web-Student-Forum
-##Web secured application using databases to keep everything tidy and make it functional. 
+## Web secured application using databases to keep everything tidy and make it functional. 
 
 Aim of this application is to let users (also called students in this case) create topic threads in each subject directory in order to 
 ask questions about exercises, provide solutions to them, collect links pointing to lecture notes' images and also to enroll for an exercise 
@@ -17,15 +17,15 @@ its sweet & easy.
 After registering, the confirmation email is sent with activation link, only if provided email is on allowed emails list (managed by admin user),
 thus preventing external users from registering. The aim of it is to make whole forum private and available only for students attending same university.
 
-##**User profile panel**:
+## **User profile panel**:
 Main aim is to provide account management, mainly changing credentials such as login, password, email, etc.  
-Functionality:  
+Whole functionality is described in AuthenticatedController and also visible at Swagger API.    
 
-##**Home panel**:   
+## **Home panel**:   
 Main aim is to provide functionality for user to add new subthreads (also called topics in this case), enroll for an exercise and manage topics
 created by him.  
-Functionality:  
+Whole functionality is described in AuthenticatedController and also visible at Swagger API.     
 
-##**Admin panel**: 
+## **Admin panel**: 
 Main aim is to provide functionality for admin user to manage everything created by him and also the others users, it is their topics and account credentials.  
-Functionality:
+Whole functionality is described in AdminController and also visible at Swagger API.
