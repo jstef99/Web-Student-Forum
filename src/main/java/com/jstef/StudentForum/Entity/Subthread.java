@@ -3,6 +3,7 @@ package com.jstef.StudentForum.Entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 //entity representing sub-section from forum
 @Entity
@@ -25,6 +26,23 @@ public class Subthread {
 
     @OneToMany(mappedBy = "subthread",cascade = CascadeType.ALL)
     private List<Topic>topics;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Subthread subthread = (Subthread) o;
+        return id == subthread.id &&
+                active == subthread.active &&
+                Objects.equals(name, subthread.name) &&
+                Objects.equals(thread, subthread.thread) &&
+                Objects.equals(topics, subthread.topics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, active, thread, topics);
+    }
 
     public Subthread(String name) {
         this.name = name;

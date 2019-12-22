@@ -26,11 +26,12 @@ public class TopicDAO {
         return topic;
     }
 
-    public void saveTopic(Topic topic){
+    public Topic saveTopic(Topic topic){
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(topic);
         manager.getTransaction().commit();
+        return topic;
     }
 
     public List<Topic> findAll() {
@@ -41,11 +42,12 @@ public class TopicDAO {
         return topics;
     }
 
-    public void deleteTopic(Topic topic) {
+    public Topic deleteTopic(Topic topic) {
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.remove(topic);
         manager.getTransaction().commit();
+        return topic;
     }
 
     public List<Topic> findByUserId(int id) {
@@ -75,10 +77,11 @@ public class TopicDAO {
         return topics;
     }
 
-    public void updateTopic(Topic topic) {
+    public Topic updateTopic(Topic topic) {
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(topic);
         manager.getTransaction().commit();
+        return topic;
     }
 }

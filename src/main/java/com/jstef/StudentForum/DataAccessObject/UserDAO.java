@@ -22,7 +22,7 @@ public class UserDAO {
     @Autowired
     RoleService roleService;
 
-    public void saveNewUser(User user){
+    public User saveNewUser(User user){
         EntityManager manager = managerFAC.createEntityManager();
         user.setPassword(encoder.encode(user.getPassword()));
         System.out.println(this.findAll());
@@ -35,13 +35,15 @@ public class UserDAO {
         manager.getTransaction().begin();
         manager.merge(user);
         manager.getTransaction().commit();
+        return user;
     }
 
-    public void updateUser(User user){
+    public User updateUser(User user){
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(user);
         manager.getTransaction().commit();
+        return user;
     }
 
     public User findByUserName(String userName){

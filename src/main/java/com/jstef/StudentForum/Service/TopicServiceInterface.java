@@ -5,13 +5,13 @@ import com.jstef.StudentForum.Entity.Topic;
 import java.util.List;
 
 public interface TopicServiceInterface {
-    void saveTopic(Topic topic);
+    Topic saveTopic(Topic topic);
 
     List<Topic> findAll();
 
     Topic findById(int id);
 
-    void deleteTopic(Topic topic);
+    Topic deleteTopic(Topic topic);
 
     List<Topic> findByUserId(int id);
 
@@ -19,5 +19,5 @@ public interface TopicServiceInterface {
 
     List<Topic> findBySubthreadId(int subthreadId);
 
-    void updateTopic(Topic topic);
+    Topic updateTopic(Topic topic);
 }

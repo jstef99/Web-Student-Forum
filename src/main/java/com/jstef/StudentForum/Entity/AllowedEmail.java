@@ -1,6 +1,7 @@
 package com.jstef.StudentForum.Entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 //Entity representing email which can be used during registration process
 @Entity
@@ -28,6 +29,21 @@ public class AllowedEmail {
 
     public int getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AllowedEmail email = (AllowedEmail) o;
+        return id == email.id &&
+                used == email.used &&
+                Objects.equals(name, email.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, used);
     }
 
     public void setId(int id) {

@@ -27,18 +27,18 @@ public class ForumThreadService implements ForumThreadServiceInterface {
 
     @Override
     @Transactional
-    public void saveNewThread(ForumThread thread) {
-        forumThreadDAO.saveNewThread(thread);
+    public ForumThread saveNewThread(ForumThread thread) {
+        return forumThreadDAO.saveNewThread(thread);
     }
 
     @Override
     @Transactional
-    public void deleteThread(ForumThread thread) {
-        forumThreadDAO.deleteThread(thread);
+    public ForumThread deleteThread(ForumThread thread) {
+        return forumThreadDAO.deleteThread(thread);
     }
 
     @Override
-    public void deleteById(int id) {
-        forumThreadDAO.deleteById(id);
+    public ForumThread deleteById(int id) {
+        return forumThreadDAO.deleteById(id);
     }
 }

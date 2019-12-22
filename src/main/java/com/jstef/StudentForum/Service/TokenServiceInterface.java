@@ -4,5 +4,5 @@ import com.jstef.StudentForum.Entity.Token;
 
 public interface TokenServiceInterface {
     public Token findByName(String name);
-    public void saveToken(Token token);
+    public Token saveToken(Token token);
 }

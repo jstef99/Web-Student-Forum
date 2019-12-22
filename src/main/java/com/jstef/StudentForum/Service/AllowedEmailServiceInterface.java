@@ -5,5 +5,5 @@ import com.jstef.StudentForum.Entity.AllowedEmail;
 public interface AllowedEmailServiceInterface {
     AllowedEmail findByName(String name);
 
-    void UpdateEmail(AllowedEmail allowedEmail);
+    AllowedEmail UpdateEmail(AllowedEmail allowedEmail);
 }

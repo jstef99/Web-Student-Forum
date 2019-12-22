@@ -9,8 +9,8 @@ import java.util.List;
 public interface UserServiceInterface extends UserDetailsService {
     User findByUserName(String userName);
     List<User> findAll();
-    void saveNewUser(User user);
-    void updateUser(User user);
+    User saveNewUser(User user);
+    User updateUser(User user);
     void deleteById(int Id);
     User findById(int Id);
     int findBiggestId();

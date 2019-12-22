@@ -15,8 +15,8 @@ public class TopicService implements TopicServiceInterface {
 
     @Override
     @Transactional
-    public void saveTopic(Topic topic) {
-        topicDAO.saveTopic(topic);
+    public Topic saveTopic(Topic topic) {
+        return topicDAO.saveTopic(topic);
     }
 
     @Override
@@ -33,8 +33,8 @@ public class TopicService implements TopicServiceInterface {
 
     @Override
     @Transactional
-    public void deleteTopic(Topic topic) {
-        topicDAO.deleteTopic(topic);
+    public Topic deleteTopic(Topic topic) {
+        return topicDAO.deleteTopic(topic);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class TopicService implements TopicServiceInterface {
     }
 
     @Override
-    public void updateTopic(Topic topic) {
-        topicDAO.updateTopic(topic);
+    public Topic updateTopic(Topic topic) {
+        return topicDAO.updateTopic(topic);
     }
 }

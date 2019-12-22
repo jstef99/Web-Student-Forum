@@ -1,6 +1,7 @@
 package com.jstef.StudentForum.Entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 //entity used while confirming user during registration process
 @Entity
@@ -17,6 +18,21 @@ public class Token {
     @OneToOne
     @JoinColumn(name="user_id")
     private User user;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Token token = (Token) o;
+        return id == token.id &&
+                Objects.equals(name, token.name) &&
+                Objects.equals(user, token.user);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, user);
+    }
 
     public Token(){
 

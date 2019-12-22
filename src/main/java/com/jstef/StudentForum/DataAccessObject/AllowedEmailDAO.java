@@ -28,10 +28,11 @@ public class AllowedEmailDAO {
         }
     }
 
-    public void updateEmail(AllowedEmail allowedEmail) {
+    public AllowedEmail updateEmail(AllowedEmail allowedEmail) {
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(allowedEmail);
         manager.getTransaction().commit();
+        return allowedEmail;
     }
 }

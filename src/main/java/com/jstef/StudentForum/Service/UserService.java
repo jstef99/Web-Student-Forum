@@ -55,14 +55,14 @@ public class UserService implements UserServiceInterface {
 
     @Override
     @Transactional
-    public void saveNewUser(User user) {
-        userDAO.saveNewUser(user);
+    public User saveNewUser(User user) {
+        return userDAO.saveNewUser(user);
     }
 
     @Override
     @Transactional
-    public void updateUser(User user) {
-        userDAO.updateUser(user);
+    public User updateUser(User user) {
+        return userDAO.updateUser(user);
     }
 
     @Override

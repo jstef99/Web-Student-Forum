@@ -7,8 +7,7 @@ import java.util.List;
 public interface ForumThreadServiceInterface {
     public List<ForumThread> findAll();
     public ForumThread findById(int Id);
-    void saveNewThread(ForumThread thread);
-    void deleteThread(ForumThread thread);
-
-    void deleteById(int id);
+    ForumThread saveNewThread(ForumThread thread);
+    ForumThread deleteThread(ForumThread thread);
+    ForumThread deleteById(int id);
 }

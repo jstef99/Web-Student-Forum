@@ -3,6 +3,7 @@ package com.jstef.StudentForum.Entity;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 
 //entity representing forum section
@@ -39,6 +40,27 @@ public class ForumThread {
     public ForumThread(String name) {
         this.subthreads=new ArrayList<>();
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ForumThread that = (ForumThread) o;
+        return id == that.id &&
+                Objects.equals(name, that.name) &&
+                Objects.equals(subthreads, that.subthreads);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, subthreads);
+    }
+
+    public ForumThread(String name, int id){
+        this.name=name;
+        this.id=id;
+        this.subthreads = new ArrayList<>();
     }
 
     public int getId() {

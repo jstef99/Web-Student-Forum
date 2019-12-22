@@ -19,7 +19,7 @@ public class AllowedEmailService implements AllowedEmailServiceInterface{
 
     @Override
     @Transactional
-    public void UpdateEmail(AllowedEmail allowedEmail) {
-        allowedEmailDAO.updateEmail(allowedEmail);
+    public AllowedEmail UpdateEmail(AllowedEmail allowedEmail) {
+        return allowedEmailDAO.updateEmail(allowedEmail);
     }
 }

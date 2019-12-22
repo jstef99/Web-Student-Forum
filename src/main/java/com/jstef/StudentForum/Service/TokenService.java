@@ -19,7 +19,7 @@ public class TokenService implements TokenServiceInterface {
 
     @Override
     @Transactional
-    public void saveToken(Token token) {
-        tokenDAO.saveToken(token);
+    public Token saveToken(Token token) {
+        return tokenDAO.saveToken(token);
     }
 }

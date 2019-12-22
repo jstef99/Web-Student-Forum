@@ -62,6 +62,12 @@ public class Topic {
 
     }
 
+    public Topic(int id, int ownerId, int threadId){
+        this.id = id;
+        this.ownerId = ownerId;
+        this.threadId = threadId;
+    }
+
     public int getId() {
         return id;
     }

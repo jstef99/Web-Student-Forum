@@ -20,10 +20,11 @@ public class TokenDAO {
         return token;
     }
 
-    public void saveToken(Token token){
+    public Token saveToken(Token token){
         EntityManager manager = managerFactory.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(token);
         manager.getTransaction().commit();
+        return token;
     }
 }

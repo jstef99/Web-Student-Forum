@@ -27,25 +27,29 @@ public class ForumThreadDAO {
                 .setParameter("Id", Id).getSingleResult();
         return thread;
     }
-    public void saveNewThread(ForumThread thread){
+    public ForumThread saveNewThread(ForumThread thread){
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(thread);
         manager.getTransaction().commit();
+        return thread;
     }
 
-    public void deleteThread(ForumThread thread) {
+    public ForumThread deleteThread(ForumThread thread) {
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.remove(thread);
         manager.getTransaction().commit();
+        return thread;
     }
 
-    public void deleteById(int id) {
+    public ForumThread deleteById(int id) {
+        ForumThread forumThread = findById(id);
         subthreadService.deleteByThreadId(id);
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.createQuery("delete from ForumThread c where c.id=:ID").setParameter("ID",id).executeUpdate();
         manager.getTransaction().commit();
+        return forumThread;
     }
 }
