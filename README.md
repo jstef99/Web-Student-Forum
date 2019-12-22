@@ -28,4 +28,8 @@ Whole functionality is described in AuthenticatedController and also visible at 
 
 ## **Admin panel**: 
 Main aim is to provide functionality for admin user to manage everything created by him and also the others users, it is their topics and account credentials.  
-Whole functionality is described in AdminController and also visible at Swagger API.
+Whole functionality is described in AdminController and also visible at Swagger API.   
+
+## **Configuration**   
+Application is ready to launch, all that needs to be done is configuring it, putting into application.properties credentials: user, password and url in order to allow database connectivity. Currently used database it MySQL, nevertheless it easily changeable to any other DB, also in memory database such as H2.    
+
