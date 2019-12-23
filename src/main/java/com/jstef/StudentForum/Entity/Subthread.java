@@ -48,6 +48,11 @@ public class Subthread {
         this.name = name;
     }
 
+    public Subthread(String name, int id) {
+        this.name = name;
+        this.id = id;
+    }
+
     public Subthread(){
         active=true;
         topics=new ArrayList<>();

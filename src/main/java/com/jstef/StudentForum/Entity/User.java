@@ -8,6 +8,7 @@ import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 //entity representing single forum user
 @Entity
@@ -55,6 +56,25 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "topic_id"))
     private List<Topic> topics;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                enabled == user.enabled &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(email, user.email) &&
+                Objects.equals(roles, user.roles) &&
+                Objects.equals(topics, user.topics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, username, password, email, enabled, roles, topics);
+    }
+
     public User(){
 
     }
@@ -63,6 +83,13 @@ public class User {
         this.username = username;
         this.password = password;
         this.email=email;
+    }
+
+    public User(int id, String username, String password, String email) {
+        this.username = username;
+        this.password = password;
+        this.email=email;
+        this.id = id;
     }
 
     public void signUpForTopic(Topic topic){

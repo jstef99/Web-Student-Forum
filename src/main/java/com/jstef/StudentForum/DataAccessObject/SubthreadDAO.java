@@ -13,11 +13,12 @@ public class SubthreadDAO {
     @Autowired
     EntityManagerFactory managerFAC;
 
-    public void saveNewSubthread(Subthread subthread) {
+    public Subthread saveNewSubthread(Subthread subthread) {
         EntityManager manager = managerFAC.createEntityManager();
         manager.getTransaction().begin();
         manager.merge(subthread);
         manager.getTransaction().commit();
+        return  subthread;
     }
 
     public Subthread findById(int subthreadId) {

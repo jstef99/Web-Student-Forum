@@ -1,6 +1,7 @@
 package com.jstef.StudentForum.Entity;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 //entity representing single forum topic
 //it should be considered as an exercise for which users (students)
@@ -49,13 +50,21 @@ public class Topic {
     }
 
     @Override
-    public int hashCode() {
-        return super.hashCode();
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Topic topic = (Topic) o;
+        return id == topic.id &&
+                threadId == topic.threadId &&
+                ownerId == topic.ownerId &&
+                Objects.equals(name, topic.name) &&
+                Objects.equals(description, topic.description) &&
+                Objects.equals(subthread, topic.subthread);
     }
 
     @Override
-    public boolean equals(Object o) {
-        return id==((Topic)o).getId();
+    public int hashCode() {
+        return Objects.hash(id, name, description, subthread, threadId, ownerId);
     }
 
     public Topic(){
